@@ -45,7 +45,7 @@ class ProjectGroup {
 private:
     string projectTitle;
     string className;
-    vector<Student> members;
+    vector<Student> members;  
 
 public:
     ProjectGroup() : projectTitle(""), className("") {}
@@ -127,7 +127,7 @@ public:
 
 class CampusHub {
 private:
-    vector<ProjectGroup> groups;
+    vector<ProjectGroup> groups;  
     const string filename = "campushub.txt";
     
     void merge(vector<ProjectGroup>& arr, int left, int mid, int right, bool sortByTitle) {
@@ -194,7 +194,7 @@ private:
                 right = mid - 1;
             }
         }
-        return -1;
+        return -1;  
     }
     
     int linearSearchTitle(const string& title) {
@@ -203,7 +203,7 @@ private:
                 return i;
             }
         }
-        return -1;
+        return -1;  
     }
 
 public:
@@ -398,26 +398,26 @@ int main() {
     int choice;
     
     cout << "\n";
-    cout << "╔══════════════════════════════════════════════════════════╗\n";
-    cout << "║          CAMPUS HUB - PROJECT RECORD SYSTEM              ║\n";
-    cout << "║       Demonstrating OOP + DSA Concepts in C++            ║\n";
-    cout << "╚══════════════════════════════════════════════════════════╝\n";
+    cout << "============================================================\n";
+    cout << "          CAMPUS HUB - PROJECT RECORD SYSTEM              \n";
+    cout << "       Demonstrating OOP + DSA Concepts in C++            \n";
+    cout << "============================================================\n";
     
     do {
         cout << "\n";
-        cout << "┌──────────────────────────────────────────────────────────┐\n";
-        cout << "│                     MAIN MENU                            │\n";
-        cout << "├──────────────────────────────────────────────────────────┤\n";
-        cout << "│  1. Add New Project Group                                │\n";
-        cout << "│  2. Display All Project Groups                           │\n";
-        cout << "│  3. Search Project by Title (Linear Search)              │\n";
-        cout << "│  4. Search Project by Title (Binary Search)              │\n";
-        cout << "│  5. Search Student by Roll Number                        │\n";
-        cout << "│  6. Sort Projects by Title (A-Z)                         │\n";
-        cout << "│  7. Sort Projects by Class Name (A-Z)                    │\n";
-        cout << "│  8. Save Data to File                                    │\n";
-        cout << "│  9. Exit                                                 │\n";
-        cout << "└──────────────────────────────────────────────────────────┘\n";
+        cout << "------------------------------------------------------------\n";
+        cout << "                     MAIN MENU                              \n";
+        cout << "------------------------------------------------------------\n";
+        cout << "  1. Add New Project Group                                 \n";
+        cout << "  2. Display All Project Groups                            \n";
+        cout << "  3. Search Project by Title (Linear Search)               \n";
+        cout << "  4. Search Project by Title (Binary Search)               \n";
+        cout << "  5. Search Student by Roll Number                         \n";
+        cout << "  6. Sort Projects by Title (A-Z)                          \n";
+        cout << "  7. Sort Projects by Class Name (A-Z)                     \n";
+        cout << "  8. Save Data to File                                     \n";
+        cout << "  9. Exit                                                  \n";
+        cout << "------------------------------------------------------------\n";
         cout << "\nTotal Project Groups: " << hub.getTotalGroups() << endl;
         cout << "Enter your choice (1-9): ";
         cin >> choice;
@@ -430,10 +430,10 @@ int main() {
                 hub.displayAll();
                 break;
             case 3:
-                hub.searchByTitle(false);
+                hub.searchByTitle(false);  
                 break;
             case 4:
-                hub.searchByTitle(true);
+                hub.searchByTitle(true);   
                 break;
             case 5:
                 hub.searchByRoll();
@@ -449,10 +449,10 @@ int main() {
                 break;
             case 9:
                 hub.saveToFile();
-                cout << "\n╔══════════════════════════════════════════════════════════╗\n";
-                cout << "║  Thank you for using Campus Hub!                         ║\n";
-                cout << "║  All data has been saved. Goodbye!                       ║\n";
-                cout << "╚══════════════════════════════════════════════════════════╝\n\n";
+                cout << "\n============================================================\n";
+                cout << "  Thank you for using Campus Hub!                          \n";
+                cout << "  All data has been saved. Goodbye!                        \n";
+                cout << "============================================================\n\n";
                 break;
             default:
                 cout << "\n[ERROR] Invalid choice! Please enter a number between 1-9.\n";
