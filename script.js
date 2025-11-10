@@ -221,6 +221,13 @@ class CampusHub {
             statsEl.textContent = this.getTotalGroups();
         }
     }
+
+    clearData() {
+        this.groups = [];
+        this.saveToStorage();
+        this.updateStats();
+        return true;
+    }
 }
 
 // Initialize CampusHub
@@ -496,6 +503,41 @@ if (saveServerBtn) {
             }
         } catch (e) {
             renderOutput('export-output', `<strong>✗ Error</strong> Unable to reach server. Is it running on port 3000?`, 'error');
+        }
+    });
+}
+
+// Clear Data
+const clearDataBtn = document.getElementById('clear-data-btn');
+if (clearDataBtn) {
+    clearDataBtn.addEventListener('click', async function() {
+        if (!confirm('⚠️ WARNING: This will delete ALL project groups and clear all stored data!\n\nAre you sure you want to continue?')) {
+            return;
+        }
+
+        // Clear local storage
+        hub.clearData();
+
+        // Clear server CSV file
+        try {
+            const resp = await fetch('http://localhost:3000/api/clear', {
+                method: 'POST'
+            });
+            if (resp.ok) {
+                const json = await resp.json();
+                renderOutput('clear-data-output', `<strong>✓ Success!</strong> All project data has been cleared successfully!${json.message ? ' ' + json.message : ''}`, 'success');
+            } else {
+                // Even if server fails, local data is cleared
+                renderOutput('clear-data-output', `<strong>✓ Success!</strong> Local data cleared. (Server may not be running, but local data is cleared.)`, 'success');
+            }
+        } catch (e) {
+            // Even if server fails, local data is cleared
+            renderOutput('clear-data-output', `<strong>✓ Success!</strong> Local data cleared. (Server may not be running, but local data is cleared.)`, 'success');
+        }
+
+        // Refresh display if on display page
+        if (document.getElementById('display-all').classList.contains('active')) {
+            renderDisplayAll();
         }
     });
 }

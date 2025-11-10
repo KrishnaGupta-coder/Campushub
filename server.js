@@ -74,6 +74,19 @@ app.get('/api/csv', (req, res) => {
     }
 });
 
+// POST /api/clear - clear the CSV file
+app.post('/api/clear', (req, res) => {
+    try {
+        // Write empty CSV with just header
+        const csv = 'GroupIndex,ProjectTitle,ClassName,StudentName,RollNumber\n';
+        fs.writeFileSync(csvPath, csv, 'utf8');
+        return res.json({ ok: true, message: 'Server CSV file cleared.' });
+    } catch (err) {
+        console.error('Error clearing CSV:', err);
+        return res.status(500).json({ ok: false, message: 'Failed to clear CSV' });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`CampusHub backend running on http://localhost:${PORT}`);
 });

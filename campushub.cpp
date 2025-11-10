@@ -391,6 +391,27 @@ public:
     int getTotalGroups() const {
         return groups.size();
     }
+    
+    void clearData() {
+        char confirm;
+        cout << "\n[WARNING] This will delete ALL project groups and clear the data file!\n";
+        cout << "Are you sure you want to continue? (y/n): ";
+        cin >> confirm;
+        
+        if (confirm == 'y' || confirm == 'Y') {
+            groups.clear();
+            
+            // Clear the file by opening it in truncate mode
+            ofstream outFile(filename, ios::trunc);
+            if (outFile) {
+                outFile.close();
+            }
+            
+            cout << "\n[SUCCESS] All project data has been cleared successfully!\n";
+        } else {
+            cout << "\n[INFO] Clear operation cancelled.\n";
+        }
+    }
 };
 
 int main() {
@@ -416,10 +437,11 @@ int main() {
         cout << "  6. Sort Projects by Title (A-Z)                          \n";
         cout << "  7. Sort Projects by Class Name (A-Z)                     \n";
         cout << "  8. Save Data to File                                     \n";
-        cout << "  9. Exit                                                  \n";
+        cout << "  9. Clear All Data                                        \n";
+        cout << " 10. Exit                                                  \n";
         cout << "------------------------------------------------------------\n";
         cout << "\nTotal Project Groups: " << hub.getTotalGroups() << endl;
-        cout << "Enter your choice (1-9): ";
+        cout << "Enter your choice (1-10): ";
         cin >> choice;
         
         switch (choice) {
@@ -448,6 +470,9 @@ int main() {
                 hub.saveToFile();
                 break;
             case 9:
+                hub.clearData();
+                break;
+            case 10:
                 hub.saveToFile();
                 cout << "\n============================================================\n";
                 cout << "  Thank you for using Campus Hub!                          \n";
@@ -455,10 +480,10 @@ int main() {
                 cout << "============================================================\n\n";
                 break;
             default:
-                cout << "\n[ERROR] Invalid choice! Please enter a number between 1-9.\n";
+                cout << "\n[ERROR] Invalid choice! Please enter a number between 1-10.\n";
         }
         
-    } while (choice != 9);
+    } while (choice != 10);
     
     return 0;
 }
