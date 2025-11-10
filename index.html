@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Hub - Project Record System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Campus Hub</h1>
+            <p class="subtitle">Project Record System</p>
+            <p class="info">Demonstrating OOP + DSA Concepts</p>
+        </header>
+
+        <div class="stats-bar">
+            <span>Total Project Groups: <strong id="totalGroups">0</strong></span>
+        </div>
+
+        <nav class="menu">
+            <button class="menu-btn active" data-action="add">Add Project</button>
+            <button class="menu-btn" data-action="search-title-linear">Search by Title (Linear)</button>
+            <button class="menu-btn" data-action="search-title-binary">Search by Title (Binary)</button>
+            <button class="menu-btn" data-action="search-roll">Search by Roll No</button>
+            <button class="menu-btn" data-action="sort-title">Sort by Title</button>
+            <button class="menu-btn" data-action="sort-class">Sort by Class</button>
+            <button class="menu-btn" data-action="save">Save Data</button>
+        </nav>
+
+        <main class="content-area">
+            <!-- Add Project Form -->
+            <div id="add-project" class="section active">
+                <h2>Add New Project Group</h2>
+                <form id="project-form">
+                    <div class="form-group">
+                        <label for="project-title">Project Title:</label>
+                        <input type="text" id="project-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="class-name">Class Name:</label>
+                        <input type="text" id="class-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="num-students">Number of Students:</label>
+                        <input type="number" id="num-students" min="1" required>
+                    </div>
+                    <div id="students-container"></div>
+                    <button type="submit" class="btn-primary">Add Project Group</button>
+                </form>
+                <div id="add-output"></div>
+            </div>
+
+            <!-- Display All -->
+            <div id="display-all" class="section">
+                <h2>All Project Groups</h2>
+                <div id="display-output"></div>
+            </div>
+
+            <!-- Search by Title (Linear) -->
+            <div id="search-title-linear" class="section">
+                <h2>Search Project by Title (Linear Search)</h2>
+                <form id="search-title-linear-form">
+                    <div class="form-group">
+                        <label for="search-title-linear-input">Project Title:</label>
+                        <input type="text" id="search-title-linear-input" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Search</button>
+                </form>
+                <div id="search-title-linear-output"></div>
+            </div>
+
+            <!-- Search by Title (Binary) -->
+            <div id="search-title-binary" class="section">
+                <h2>Search Project by Title (Binary Search)</h2>
+                <form id="search-title-binary-form">
+                    <div class="form-group">
+                        <label for="search-title-binary-input">Project Title:</label>
+                        <input type="text" id="search-title-binary-input" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Search</button>
+                </form>
+                <div id="search-title-binary-output"></div>
+            </div>
+
+            <!-- Search by Roll Number -->
+            <div id="search-roll" class="section">
+                <h2>Search Student by Roll Number</h2>
+                <form id="search-roll-form">
+                    <div class="form-group">
+                        <label for="search-roll-input">Roll Number:</label>
+                        <input type="text" id="search-roll-input" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Search</button>
+                </form>
+                <div id="search-roll-output"></div>
+            </div>
+
+            <!-- Sort by Title -->
+            <div id="sort-title" class="section">
+                <h2>Sort Projects by Title (A-Z)</h2>
+                <button id="sort-title-btn" class="btn-primary">Sort Now</button>
+                <div id="sort-title-output"></div>
+            </div>
+
+            <!-- Sort by Class -->
+            <div id="sort-class" class="section">
+                <h2>Sort Projects by Class Name (A-Z)</h2>
+                <button id="sort-class-btn" class="btn-primary">Sort Now</button>
+                <div id="sort-class-output"></div>
+            </div>
+
+            <!-- Export Data -->
+            <div id="save" class="section">
+                <h2>Export Data</h2>
+                <button id="download-csv-btn" class="btn-primary">Download CSV</button>
+                <div style="margin-top:12px"></div>
+                <button id="save-server-btn" class="btn-primary">Save to Server (CSV)</button>
+                <div id="export-output"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
