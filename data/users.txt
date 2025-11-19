@@ -1,2 +1,3 @@
 faculty1|pass123|faculty|Dr. Smith|
 student1|pass123|student|John Doe|CS101
+CS101001|pass123|student|Alice Johnson|CS101
