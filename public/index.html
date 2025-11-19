@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CampusHub Login</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>CampusHub</h1>
+    <div class="card">
+      <form id="loginForm">
+        <label>Username</label>
+        <input type="text" name="username" required/>
+        <label>Password</label>
+        <input type="password" name="password" required/>
+        <div class="captcha-row">
+          <span id="captchaText"></span>
+          <button type="button" id="refreshCaptcha">↻</button>
+        </div>
+        <input type="hidden" name="token" id="captchaToken"/>
+        <label>Enter Captcha</label>
+        <input type="text" name="captcha" required/>
+        <button type="submit">Login</button>
+      </form>
+      <div class="hint">Use faculty1/pass123 or student1/pass123</div>
+      <div id="error" class="error"></div>
+    </div>
+    <div class="card">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <label>Username</label>
+        <input type="text" name="username" required/>
+        <label>Password</label>
+        <input type="password" name="password" required/>
+        <label>Full Name</label>
+        <input type="text" name="name" required/>
+        <label>Role</label>
+        <select name="role">
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+        </select>
+        <label class="cls">Class (for students)</label>
+        <input type="text" name="className" placeholder="CS101"/>
+        <button type="submit">Register</button>
+      </form>
+      <div id="regError" class="error"></div>
+      <div id="regOk" class="success"></div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

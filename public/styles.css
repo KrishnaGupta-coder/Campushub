@@ -1,0 +1,19 @@
+body{font-family:system-ui,Arial,sans-serif;margin:0;background:#f6f7fb;color:#222}
+.container{max-width:1000px;margin:30px auto;padding:0 16px}
+.card{background:#fff;border:1px solid #e2e5ea;border-radius:8px;padding:16px;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;margin:10px 0 6px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #d0d4db;border-radius:6px}
+button{padding:10px 14px;border:none;border-radius:6px;background:#2952ff;color:#fff;cursor:pointer}
+button:hover{opacity:.9}
+.error{color:#b00020;margin-top:8px}
+.success{color:#0e8f2d;margin-top:8px}
+.hint{font-size:.9em;color:#666;margin-top:8px}
+.captcha-row{display:flex;gap:8px;align-items:center;margin:10px 0}
+#captchaText{font-family:monospace;background:#222;color:#fff;padding:8px;border-radius:6px;letter-spacing:2px}
+.topbar{display:flex;justify-content:space-between;align-items:center}
+.controls{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.list{border-top:1px solid #eee}
+.list-item{padding:10px;border-bottom:1px solid #eee}
+.badge{display:inline-block;background:#eef2ff;color:#333;border-radius:12px;padding:4px 8px;margin-left:8px}
+.link{color:#2952ff;text-decoration:none}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CampusHub Faculty</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>Faculty Dashboard</h1>
+      <button id="logoutBtn">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h2>Upload Project</h2>
+        <form id="uploadForm">
+          <label>Title</label>
+          <input name="title" required/>
+          <label>Description</label>
+          <textarea name="description"></textarea>
+          <label>Class</label>
+          <input name="className" placeholder="CS101" required/>
+          <label>PDF</label>
+          <input type="file" name="pdf" accept="application/pdf" required/>
+          <button type="submit">Upload</button>
+        </form>
+        <div id="uploadMsg" class="success"></div>
+      </div>
+      <div class="card">
+        <h2>My Projects</h2>
+        <div id="projects"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Project Details</h2>
+      <div class="controls">
+        <label>Project ID</label>
+        <input id="detailProjectId"/>
+        <label>Sort</label>
+        <select id="sortSelect">
+          <option value="name">Name</option>
+          <option value="viewed">Viewed</option>
+          <option value="submitted">Submitted</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button id="loadStudents">Load</button>
+      </div>
+      <div id="students"></div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

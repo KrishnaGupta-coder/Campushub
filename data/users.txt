@@ -1,0 +1,2 @@
+faculty1|pass123|faculty|Dr. Smith|
+student1|pass123|student|John Doe|CS101
