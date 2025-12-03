@@ -175,10 +175,10 @@ Use Cases:
 git clone https://github.com/yourusername/CampusHub.git
 cd CampusHub
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 npm install
 
-3️⃣ Start Server
+### 3️⃣ Start Server
 node server.js
 
 
@@ -186,11 +186,11 @@ Server runs at:
 
 http://localhost:3000
 
-4️⃣ Compile & Run C++ Module (Optional)
+### 4️⃣ Compile & Run C++ Module (Optional)
 g++ campushub.cpp -o campushub
 ./campushub
 
-🧭 SDLC Adopted: Agile Model
+## 🧭 SDLC Adopted: Agile Model
 Sprints:
 
 Backend API development
@@ -201,7 +201,7 @@ C++ CLI module integration
 
 Each sprint included planning → design → build → testing.
 
-📈 Future Enhancements
+## 📈 Future Enhancements
 
 Android/iOS mobile app
 
@@ -215,7 +215,7 @@ AI plagiarism detection
 
 Progress analytics dashboard
 
-🧑‍💻 Team Members
+## 🧑‍💻 Team Members
 
 Krishna Gupta
 
@@ -227,16 +227,16 @@ Koshi Jain
 
 Jagriti Sahu
 
-🎓 Guide / Mentor
+## 🎓 Guide / Mentor
 
 Er. Manish Dwivedi
 Associate Professor, AI & DS
 Arya College of Engineering & I.T., Jaipur
 
-📝 License
+## 📝 License
 
 MIT License © 2025 CampusHub Development Team
 
-⭐ Support the Project
+## ⭐ Support the Project
 
 If you like this project, please ⭐ star the repository!
