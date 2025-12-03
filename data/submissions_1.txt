@@ -1,5 +1,5 @@
-CS101001|Alice Johnson|CS101|1|1|1|uploads/submissions/1763574245083_Git_Resources-1.pdf
+CS101001|Alice Johnson|CS101|1|1|0|uploads/submissions/1763574245083_Git_Resources-1.pdf
 CS101002|Bob Smith|CS101|0|0|0|
-CS101003|Charlie Brown|CS101|0|0|0|
+CS101003|Charlie Brown|CS101|1|0|0|
 CS101004|Diana Prince|CS101|0|0|0|
 CS101005|Eve Wilson|CS101|0|0|0|
